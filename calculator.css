@@ -1,0 +1,40 @@
+.title{
+    text-align: center;
+    margin: 16px 0px;
+}
+
+.main{
+    text-align:center;
+}
+
+.button{
+}
+
+.calcu{
+    display:flex;
+    border: solid black;
+    justify-content: center;
+}
+
+
+.left{
+    display:flex;
+    flex-direction: column;
+}
+
+.right{
+    display:flex;
+    flex-direction: column;
+}
+
+.row{
+    display:flex;
+}
+
+.zero{
+    flex-grow:5;
+}
+
+.divide{
+    flex-grow:1;
+}
