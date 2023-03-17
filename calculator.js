@@ -119,12 +119,15 @@ screen=document.querySelector("div.screen");
 var currentnumber=[];
 buttons.forEach((button)=>{
     button.addEventListener('click',function(e){
-        currentnumber.push(e.target.textContent)
+        console.log(currentnumber.length)
         if(screen.textContent==0 && e.target.textContent=="0"){
             currentnumber=[]
         }
         else{
-        screen.textContent=currentnumber.join(",").replaceAll(",","");
+            if(screen.textContent.length<13){
+                currentnumber.push(e.target.textContent);
+                screen.textContent=currentnumber.join(",").replaceAll(",","");
+            }
         }
     })
 })
