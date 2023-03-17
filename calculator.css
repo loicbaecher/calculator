@@ -57,6 +57,10 @@ button:active{
     box-shadow: 0 2px #666;
 }
 
+button#operator{
+    background-color : #38689e;
+}
+
 .clear{
     grid-column-start:1;
     grid-column-end:6;

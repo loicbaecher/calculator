@@ -15,6 +15,7 @@ function multiply(x,y){
 }
 
 function divide(x,y){
+    x=parseInt(x);
     if(y=="0"){
         return("ERROR")
     }
@@ -51,9 +52,6 @@ let store=[];
 let ope="";
 opers.forEach((oper)=>{
     oper.addEventListener('click',function(e){
-        if(screen.textContent=="ERROR"){
-            store=[];
-        }
         if(store.length==0){
             store.push(screen.textContent);
         }
@@ -83,6 +81,10 @@ opers.forEach((oper)=>{
             store=screen.textContent;
             ope=e.target.getAttribute("class");
         }
+        if(screen.textContent=="ERROR"){
+            store=[];
+            ope="";
+        }
     })
 })
 
@@ -97,13 +99,17 @@ equal.addEventListener('click',function(e){
         break;
         case "divide":
             if(operate(store,screen.textContent,divide)=="ERROR"){
-                return("ERROR");
+                screen.textContent="ERROR";
             }
             else{
                 screen.textContent=operate(store,screen.textContent,divide);
+                store=[];
             }
         break;
-    };
+    }
+    store=[];
+    ope="";
+    currentnumber=[];
 })
 
 //Add the number to the display when pressing a key
