@@ -51,6 +51,9 @@ let store=[];
 let ope="";
 opers.forEach((oper)=>{
     oper.addEventListener('click',function(e){
+        if(screen.textContent=="ERROR"){
+            store=[];
+        }
         if(store.length==0){
             store.push(screen.textContent);
         }
@@ -66,10 +69,11 @@ opers.forEach((oper)=>{
                 break;
                 case "multiply":screen.textContent=operate(store,screen.textContent,multiply)
                 break;
-                case "divide":screen.textContent=operate(store,screen.textContent,divide)
-                console.log(operate(store,screen.textContent,divide));
-                    if((operate(store,screen.textContent,divide))==NaN){
-                        return("ERROR");
+                case "divide":
+                    if((operate(store,screen.textContent,divide))=="ERROR"){
+                        screen.textContent="ERROR";
+                        store=[];
+                        ope="";
                     }
                     else{
                         screen.textContent=operate(store,screen.textContent,divide);
