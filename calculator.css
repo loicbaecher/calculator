@@ -1,40 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Lao&display=swap');
+
 .title{
     text-align: center;
     margin: 16px 0px;
+    font-family: 'Noto Serif Lao', serif;
 }
 
 .main{
-    text-align:center;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.button{
+.screen{
+    margin:10px 5px;
+    text-align: right;
+    border:solid black;
+    padding: 2px 5px;
 }
 
 .calcu{
-    display:flex;
     border: solid black;
+}
+
+button{
+    width: 100%;
+    height:100%;
+    padding:10px 30px;
+}
+
+.clear{
+    grid-column-start:1;
+    grid-column-end:6;
+    grid-row-start: 1;
+    grid-row-end:2;
+}
+
+.type{
+    display:grid;
+    margin-left:5px;
+    margin-right:5px;
+    margin-bottom:5px;
     justify-content: center;
+    grid-template-columns: repeat(5,1fr) ;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    padding: 10px 10px;
 }
 
-
-.left{
-    display:flex;
-    flex-direction: column;
-}
-
-.right{
-    display:flex;
-    flex-direction: column;
-}
-
-.row{
-    display:flex;
+.equal{
+    grid-column-start:5;
+    grid-column-end:6;
+    grid-row-start: 2;
+    grid-row-end:6;
 }
 
 .zero{
-    flex-grow:5;
-}
-
-.divide{
-    flex-grow:1;
+    grid-column-start:1;
+    grid-column-end:4;
+    grid-row-start: 5;
+    grid-row-end:6;
 }
