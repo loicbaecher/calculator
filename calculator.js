@@ -41,9 +41,14 @@ opers=document.querySelectorAll("button#operator");
 opers=Array.from(opers);
 opers.forEach((oper)=>{
     oper.addEventListener('click',function(e){
+        if(store!=[]){
+            store=screen.textContent;
+        }
+        else(){
+            
+        }
         store=screen.textContent;
-        console.log(screen.textContent);
-        screen.textContent=screen.textContent+" "+e.target.textContent;
+        ope=
     })
 })
 
